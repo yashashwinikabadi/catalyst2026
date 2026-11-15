@@ -1,0 +1,19 @@
+[
+  {
+    "id": "help_1794731909926_fksi0",
+    "requestedBy": "Shanti Devi (Sample Persona)",
+    "message": "Assistance requested from Elder Mode.",
+    "urgency": "High",
+    "status": "Open",
+    "createdAt": "2026-11-15T08:38:29.926Z"
+  },
+  {
+    "id": "help_1794730414232_8sy6a",
+    "requestedBy": "Demo Elder",
+    "message": "I need assistance.",
+    "urgency": "High",
+    "status": "Resolved",
+    "createdAt": "2026-11-15T08:13:34.232Z",
+    "resolvedAt": "2026-11-15T08:26:39.749Z"
+  }
+]

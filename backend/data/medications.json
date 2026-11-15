@@ -1,0 +1,46 @@
+[
+  {
+    "id": "med_1794726575837_689r2m",
+    "medicineName": "Demo Vitamin",
+    "dosage": "1 tablet",
+    "scheduledTime": "08:00 AM",
+    "instructions": "Demo test record only",
+    "status": "Skipped",
+    "isCustomUserEntry": true,
+    "remindLaterUntil": null,
+    "createdAt": "2026-11-15T07:09:35.837Z",
+    "updatedAt": "2026-11-15T07:25:11.597Z",
+    "history": [
+      {
+        "action": "Created",
+        "timestamp": "2026-11-15T07:09:35.837Z",
+        "recordedBy": "User/Elder",
+        "notes": "Medication entry created in schedule"
+      },
+      {
+        "action": "Taken",
+        "timestamp": "2026-11-15T07:10:11.809Z",
+        "recordedBy": "Elder",
+        "notes": "Demo action test"
+      },
+      {
+        "action": "Taken",
+        "timestamp": "2026-11-15T07:11:43.797Z",
+        "recordedBy": "Elder",
+        "notes": ""
+      },
+      {
+        "action": "RemindLater",
+        "timestamp": "2026-11-15T07:11:45.244Z",
+        "recordedBy": "Elder",
+        "notes": ""
+      },
+      {
+        "action": "Skipped",
+        "timestamp": "2026-11-15T07:25:11.597Z",
+        "recordedBy": "Elder",
+        "notes": ""
+      }
+    ]
+  }
+]

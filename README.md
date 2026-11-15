@@ -1,131 +1,179 @@
 # 🌿 SAANIDHYA
 
-> **"Together in care. Independent in life."**  
-> *Developed for the Catalyst 2026 AI Hackathon.*
+**Together in care. Independent in life.**
 
----
+Developed for the **Catalyst 2026 AI Hackathon**.
 
 ## 📖 Overview
 
-**SAANIDHYA** is a premium, dignified healthcare and family-care companion platform. It reconciles two essential human needs:
-1. **Elderly Independence**: An ultra-accessible interface with large high-contrast controls, single-touch emergency SOS, gentle well-being check-ins, and intuitive medication tracking.
-2. **Family Peace of Mind**: A real-time caregiver observability dashboard providing biometric vitals telemetry, daily routine adherence streams, and predictive Gemini AI care briefs.
+**SAANIDHYA** is an elderly-care and medication-management platform designed to connect elderly individuals, family members and caregivers through a shared care experience.
 
----
+Its goal is to support elderly independence while making everyday care coordination easier for families and caregivers.
+
+### Core capabilities
+
+- **Elder Mode:** An accessible interface with large controls, medication tracking and a one-touch assistance request.
+- **Family & Caregiver Mode:** A dashboard for reviewing medication status, care handovers, appointments and assistance requests.
+- **Medication Management:** Record medication actions such as Taken, Skipped and Remind Me Later.
+- **Care Handover:** Create caregiver handover records and allow incoming caregivers to acknowledge responsibility.
+- **Assistance Requests:** Elder Mode can submit requests that appear in the caregiver dashboard.
+- **Care History:** Maintain records of medication actions and care coordination events.
 
 ## 🎨 Design Direction & Palette
 
-Designed for calmness, clarity, and trust:
-* **Deep Forest Green** (`#173C38`): Anchor color signifying stability, longevity, and clinical trust.
-* **Warm Ivory** (`#E9E4D8`): Soothing base background reducing eye strain for elderly users.
-* **Sage** (`#A9BDA9`): Subtle restorative accent for badges, borders, and wellness metrics.
-* **Champagne** (`#C7A36C`): Warm highlight for primary action triggers and AI highlights.
+SAANIDHYA uses a calm, premium and accessible visual identity.
 
-Generous whitespace, readable typography (Plus Jakarta Sans & Playfair Display), subtle borders, and soft shadows provide an unhurried, reassuring experience.
+| Colour | Hex | Purpose |
+|---|---|---|
+| Deep Forest Green | `#173C38` | Trust and stability |
+| Warm Ivory | `#E9E4D8` | Comfortable backgrounds |
+| Sage | `#A9BDA9` | Calm accents |
+| Champagne | `#C7A36C` | Warm highlights |
 
----
+The interface uses generous spacing, readable typography, clear visual hierarchy and accessible controls.
 
-## 🏗️ Project Architecture
+## 🏗️ Technology Stack
+
+- **Frontend:** React, Vite, JavaScript and CSS
+- **Backend:** Node.js and Express.js
+- **Data storage:** Local JSON files for the current prototype
+- **API communication:** REST endpoints
+- **Development tools:** VS Code, npm and GitHub
+
+## 🧩 Project Structure
 
 ```text
 Catalyst2026/
 ├── backend/
+│   ├── data/
+│   │   ├── medications.json
+│   │   ├── careHandovers.json
+│   │   └── helpRequests.json
 │   ├── src/
 │   │   ├── config/
-│   │   │   └── env.js            # Environment configuration & service checks
 │   │   ├── middleware/
-│   │   │   └── errorHandler.js   # Centralized error handling
 │   │   ├── routes/
-│   │   │   ├── api.js            # Base capability routes
-│   │   │   └── health.js         # GET /health health-check endpoint
+│   │   │   ├── health.js
+│   │   │   ├── api.js
+│   │   │   ├── medications.js
+│   │   │   ├── careHandovers.js
+│   │   │   └── helpRequests.js
 │   │   ├── services/
-│   │   │   ├── firebaseService.js # Firebase Auth & Firestore architecture stub
-│   │   │   └── geminiService.js   # Google Gemini API integration stub
-│   │   └── app.js                # Express app setup with CORS & JSON parsing
-│   ├── server.js                 # Server entrypoint with graceful shutdown
-│   ├── Dockerfile                # Production Dockerfile for Google Cloud Run
-│   ├── package.json
-│   └── .env.example
+│   │   │   ├── medicationService.js
+│   │   │   ├── careHandoverService.js
+│   │   │   ├── firebaseService.js
+│   │   │   └── geminiService.js
+│   │   └── app.js
+│   ├── server.js
+│   ├── Dockerfile
+│   └── package.json
 ├── frontend/
 │   ├── public/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── caregiver/        # Caregiver dashboard, vitals, activity stream
-│   │   │   ├── common/           # Reusable Button, Card, Header, StatusBadge
-│   │   │   ├── elder/            # Elder dashboard, high-contrast SOS modal
-│   │   │   └── landing/          # Overview hero & dual entry portal
+│   │   │   ├── caregiver/
+│   │   │   ├── common/
+│   │   │   ├── elder/
+│   │   │   └── landing/
 │   │   ├── context/
-│   │   │   └── ModeContext.jsx   # State management & live backend health check
-│   │   ├── App.jsx               # Main application container
-│   │   ├── main.jsx              # React DOM root entry
-│   │   └── index.css             # Full design system & accessible themes
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
 │   ├── index.html
-│   ├── vite.config.js            # Vite configuration with API proxying
-│   ├── package.json
-│   └── .env.example
-├── .gitignore
+│   ├── vite.config.js
+│   └── package.json
 ├── .env.example
-├── package.json                  # Root orchestration scripts
+├── .gitignore
+├── package.json
 └── README.md
 ```
 
----
-
-## 🚀 Quickstart & Setup
+## 🚀 Local Setup
 
 ### Prerequisites
-* **Node.js**: v18.0.0 or later (tested on Node v24)
-* **Windows Note**: In PowerShell, if script execution is restricted for `npm.ps1`, use `npm.cmd`.
 
-### 1. Install Dependencies
-Run in two separate terminals, or sequentially:
+- Node.js 18 or later
+- npm
+- Git
 
-**Backend:**
-```powershell
-cd backend
-npm.cmd install
+On Windows PowerShell, use `npm.cmd` if PowerShell blocks `npm.ps1`.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yashashwinikabadi/catalyst2026.git
+cd catalyst2026
 ```
 
-**Frontend:**
+### 2. Install dependencies
+
 ```powershell
-cd frontend
-npm.cmd install
+npm.cmd run setup
 ```
 
-### 2. Configure Environment (Optional for initial run)
-Copy `.env.example` templates:
+### 3. Start the backend
+
+Open a PowerShell terminal in the project root:
+
 ```powershell
-copy backend\.env.example backend\.env
-copy frontend\.env.example frontend\.env
+npm.cmd run backend:dev
 ```
 
-### 3. Start Development Servers
+Backend health check:
 
-**Start Backend (Port 8080):**
-```powershell
-cd backend
-npm.cmd run dev
-```
-*Health check URL: `http://localhost:8080/health`*  
-*API info URL: `http://localhost:8080/api/info`*
+`http://localhost:8080/health`
 
-**Start Frontend (Port 5173):**
+### 4. Start the frontend
+
+Open a second PowerShell terminal in the project root:
+
 ```powershell
-cd frontend
-npm.cmd run dev
+npm.cmd run frontend:dev
 ```
-*Open `http://localhost:5173` in your browser.*
+
+Open the application:
+
+`http://localhost:5173/`
+
+## 🔌 Current API Capabilities
+
+| Endpoint | Method | Purpose |
+|---|---|---|
+| `/health` | GET | Backend health check |
+| `/api/medications` | GET | Retrieve medication records |
+| `/api/medications` | POST | Create a medication record |
+| `/api/medications/:id/action` | POST | Record a medication action |
+| `/api/care-handovers` | GET | Retrieve handover records |
+| `/api/care-handovers` | POST | Create a care handover |
+| `/api/care-handovers/:id/acknowledge` | POST | Acknowledge a handover |
+| `/api/help-requests` | GET | Retrieve assistance requests |
+| `/api/help-requests` | POST | Create an assistance request |
+| `/api/help-requests/:id/resolve` | POST | Resolve an assistance request |
+
+## 🔐 Safety, Privacy & Prototype Limitations
+
+- The current prototype uses local JSON storage, not a production cloud database.
+- Sample personas and records are illustrative demonstration data, not real patient information.
+- Assistance requests appear in the caregiver dashboard, but do not dispatch real emergency calls, SMS or push notifications.
+- Medication records reflect user-reported actions; they do not prove that medication was physically taken.
+- Firebase Authentication, Cloud Firestore and Gemini API integration are not yet active.
+- No biometric sensors are connected.
+- The platform does not diagnose conditions, prescribe medication or change medical instructions.
+
+A future production version can introduce secure identity management, cloud-based shared storage, configured reminders and carefully controlled AI assistance.
+
+## ☁️ Deployment & Future Scope
+
+The backend includes a Dockerfile for container-based deployment. The current architecture can be extended with:
+
+- Firebase Authentication and Cloud Firestore.
+- Google Gemini for simplifying doctor-provided instructions.
+- Configured email reminders and caregiver notifications.
+- Secure role-based access for elderly users, family members and caregivers.
+- Persistent cloud storage and production monitoring.
+
+These are planned integrations, not currently active features.
 
 ---
 
-## ☁️ Cloud & AI Integration Readiness
-
-* **Google Cloud Run**: Includes `backend/Dockerfile` configured with multi-stage production build and automatic `PORT=8080` compliance.
-* **Google Gemini API**: Service layer is scaffolded in `backend/src/services/geminiService.js` to ingest health telemetry and generate natural language summaries without exposing API keys in code.
-* **Firebase & Cloud Firestore**: Architecture is ready in `backend/src/services/firebaseService.js` and frontend config templates for token verification and real-time syncing.
-
----
-
-## 🔒 Security & Best Practices
-* Zero secrets or API keys are committed. All integrations use `.env` files.
-* Repository includes comprehensive `.gitignore` preventing accidental check-ins of keys, logs, or `node_modules`.
+**SAANIDHYA — Care that supports independence, dignity and connection.**
